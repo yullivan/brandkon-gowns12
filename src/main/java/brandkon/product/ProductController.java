@@ -1,10 +1,7 @@
 package brandkon.product;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +15,10 @@ public class ProductController {
     @GetMapping("")
     public List<ProductResponse> readProducts(@RequestParam(required = false) Long brandId){
         return productService.read(brandId);
+    }
+
+    @GetMapping("/{productId}")
+    public ProductDetailResponse readDetails(@PathVariable Long productId){
+        return productService.readDetails(productId);
     }
 }

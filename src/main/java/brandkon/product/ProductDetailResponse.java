@@ -8,7 +8,7 @@ public record ProductDetailResponse(
         Long id,
         String productName,
         Integer price,
-        List<BrandDetailResponse> brand,
+        BrandDetailResponse brand,
         Integer expirationDays
 ) {
 }

@@ -1,5 +1,7 @@
 package brandkon.product;
 
+import brandkon.brand.Brand;
+import brandkon.brand.BrandDetailResponse;
 import brandkon.brand.BrandRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -36,4 +38,17 @@ public class ProductService {
     }
 
 
+    public ProductDetailResponse readDetails(Long productId) {
+        Product p = productRepository.findById(productId).orElseThrow(()->new IllegalArgumentException("존재하지 않는 상품 ID 입니다"));
+        Brand b = brandRepository.findById(p.getBrand().getId()).orElseThrow();
+        return new ProductDetailResponse(
+                p.getId(),
+                p.getName(),
+                p.getPrice(),
+                new BrandDetailResponse(
+                        b.getId(),
+                        b.getName(),
+                        b.getGuidelines()),
+                p.getExpirationDays());
+    }
 }
