@@ -13,10 +13,11 @@ import java.util.List;
 public class ProductService {
     ProductRepository productRepository;
     BrandRepository brandRepository;
+    ProductDao productDao;
 
     public List<ProductResponse> read(Long brandId) {
         if (brandId!=null){
-            return productRepository.findByBrand_Id().stream()
+            return productRepository.findByBrand_Id(brandId).stream()
                     .map(o->new ProductResponse(
                             o.getId(),
                             o.getBrand().getName(),
@@ -50,5 +51,9 @@ public class ProductService {
                         b.getName(),
                         b.getGuidelines()),
                 p.getExpirationDays());
+    }
+
+    public List<ProductPopularResponse> readPopularProducts(Long categoryId, Long brandId) {
+        return productDao.findAllByFiltersOrderBySalesDesc(categoryId,brandId);
     }
 }

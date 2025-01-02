@@ -16,7 +16,7 @@ public class Brand {
     private Long id;
     private String name;
     private String imageUrl;
-    private String guidelines;
     @ManyToOne
     private Category category;
+    private String guidelines;
 }

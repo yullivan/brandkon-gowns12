@@ -18,6 +18,7 @@ public class Product {
     private Integer price;
     private String imageUrl;
     private Integer expirationDays;
+    private Integer sales;
     @ManyToOne
     private Brand brand;
 }
