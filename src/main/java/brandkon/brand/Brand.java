@@ -1,9 +1,7 @@
 package brandkon.brand;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import brandkon.category.entity.Category;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,4 +17,6 @@ public class Brand {
     private String name;
     private String imageUrl;
     private String guidelines;
+    @ManyToOne
+    private Category category;
 }
