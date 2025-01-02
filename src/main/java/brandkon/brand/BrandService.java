@@ -13,7 +13,18 @@ public class BrandService {
 
     public List<BrandResponse> readByCategory(String category) {
         return brandRepository.findByCategory_Name(category).stream()
-                .map(o->new BrandResponse(
+                .map(o -> new BrandResponse(
+                        o.getId(),
+                        o.getName(),
+                        o.getImageUrl()
+                ))
+                .toList();
+    }
+
+
+    public List<BrandResponse> read(Long brandId) {
+        return brandRepository.findById(brandId).stream()
+                .map(o -> new BrandResponse(
                         o.getId(),
                         o.getName(),
                         o.getImageUrl()
