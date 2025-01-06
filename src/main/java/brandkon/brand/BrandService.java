@@ -10,10 +10,11 @@ import java.util.List;
 public class BrandService {
 
     BrandRepository brandRepository;
+    BrandCategoryRepository brandCategoryRepository;
 
-    public List<BrandResponse> readByCategory(String category) {
-        return brandRepository.findByCategory_Slug(category).stream()
-                .map(o -> new BrandResponse(
+    public List<BrandResponse> readByCategory(String slug) {
+        return brandRepository.findByCategory_Slug(slug).stream()
+                .map(o->new BrandResponse(
                         o.getId(),
                         o.getName(),
                         o.getImageUrl()

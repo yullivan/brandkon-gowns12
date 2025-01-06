@@ -5,19 +5,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-public class Brand {
+public class BrandCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String imageUrl;
-    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BrandCategory> categories;
-    private String guidelines;
+    @ManyToOne
+    private Brand brand;
+    private Long CategoryId;
 }

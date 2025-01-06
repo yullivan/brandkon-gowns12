@@ -1,6 +1,7 @@
 package brandkon.product;
 
 import brandkon.brand.QBrand;
+import brandkon.brand.QBrandCategory;
 import brandkon.category.entity.QCategory;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
@@ -16,8 +17,8 @@ public class ProductDao {
     private final JPAQueryFactory queryFactory;
 
     private final QProduct qProduct = QProduct.product;
-    private final QCategory qCategory = QCategory.category;
     private final QBrand qBrand = QBrand.brand;
+    private final QBrandCategory qBrandCategory = QBrandCategory.brandCategory;
 
     public List<ProductPopularResponse> findAllByFiltersOrderBySalesDesc(Long categoryId, Long brandId) {
 
@@ -32,8 +33,8 @@ public class ProductDao {
                                 qProduct.imageUrl,
                                 qProduct.sales))
                 .from(qProduct)
-                .leftJoin(qProduct.brand, qBrand)
-                .leftJoin(qBrand.category, qCategory)
+                .join(qProduct.brand, qBrand)
+                .join(qBrand.categories, qBrandCategory)
                 .where(categoryIdEq(categoryId),
                         brandIdEq(brandId))
                 .orderBy(qProduct.sales.desc())
@@ -42,7 +43,7 @@ public class ProductDao {
     }
 
     private BooleanExpression categoryIdEq(Long categoryId) {
-        return categoryId != null ? qBrand.category.id.eq(categoryId) : null;
+        return categoryId != null ? qBrandCategory.CategoryId.eq(categoryId) : null;
     }
 
     private BooleanExpression brandIdEq(Long brandId){
