@@ -12,7 +12,7 @@ public class BrandService {
     BrandRepository brandRepository;
 
     public List<BrandResponse> readByCategory(String category) {
-        return brandRepository.findByCategory_Name(category).stream()
+        return brandRepository.findByCategory_Slug(category).stream()
                 .map(o -> new BrandResponse(
                         o.getId(),
                         o.getName(),
