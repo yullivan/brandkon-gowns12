@@ -1,6 +1,6 @@
-package brandkon.product;
+package brandkon.product.entity;
 
-import brandkon.brand.Brand;
+import brandkon.brand.entity.Brand;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

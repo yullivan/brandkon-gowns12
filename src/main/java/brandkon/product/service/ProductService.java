@@ -1,8 +1,14 @@
-package brandkon.product;
+package brandkon.product.service;
 
-import brandkon.brand.Brand;
-import brandkon.brand.BrandDetailResponse;
-import brandkon.brand.BrandRepository;
+import brandkon.brand.entity.Brand;
+import brandkon.brand.dto.BrandDetailResponse;
+import brandkon.brand.repository.BrandRepository;
+import brandkon.product.dao.ProductDao;
+import brandkon.product.dto.ProductDetailResponse;
+import brandkon.product.dto.ProductPopularResponse;
+import brandkon.product.dto.ProductResponse;
+import brandkon.product.entity.Product;
+import brandkon.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

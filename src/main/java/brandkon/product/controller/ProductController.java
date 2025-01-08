@@ -1,5 +1,9 @@
-package brandkon.product;
+package brandkon.product.controller;
 
+import brandkon.product.dto.ProductPopularResponse;
+import brandkon.product.dto.ProductResponse;
+import brandkon.product.service.ProductService;
+import brandkon.product.dto.ProductDetailResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

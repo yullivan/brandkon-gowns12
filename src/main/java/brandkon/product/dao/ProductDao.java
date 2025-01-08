@@ -1,8 +1,9 @@
-package brandkon.product;
+package brandkon.product.dao;
 
 import brandkon.brand.QBrand;
 import brandkon.brand.QBrandCategory;
-import brandkon.category.entity.QCategory;
+import brandkon.product.dto.ProductPopularResponse;
+import brandkon.product.QProduct;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;

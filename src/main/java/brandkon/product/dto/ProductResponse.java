@@ -1,4 +1,4 @@
-package brandkon.product;
+package brandkon.product.dto;
 
 public record ProductResponse(
         Long id,

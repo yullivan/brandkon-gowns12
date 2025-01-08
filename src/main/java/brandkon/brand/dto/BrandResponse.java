@@ -1,4 +1,4 @@
-package brandkon.brand;
+package brandkon.brand.dto;
 
 public record BrandResponse(
         Long id,

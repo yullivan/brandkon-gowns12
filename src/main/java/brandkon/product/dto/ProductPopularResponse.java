@@ -1,4 +1,4 @@
-package brandkon.product;
+package brandkon.product.dto;
 
 public record ProductPopularResponse(Long id,
                                      String brandName,

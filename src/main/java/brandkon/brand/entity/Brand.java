@@ -1,4 +1,4 @@
-package brandkon.brand;
+package brandkon.brand.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

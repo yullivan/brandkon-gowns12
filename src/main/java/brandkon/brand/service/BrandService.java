@@ -1,5 +1,9 @@
-package brandkon.brand;
+package brandkon.brand.service;
 
+import brandkon.brand.dto.BrandResponse;
+import brandkon.brand.entity.Brand;
+import brandkon.brand.repository.BrandCategoryRepository;
+import brandkon.brand.repository.BrandRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

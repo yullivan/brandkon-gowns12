@@ -1,5 +1,7 @@
-package brandkon.brand;
+package brandkon.brand.controller;
 
+import brandkon.brand.dto.BrandResponse;
+import brandkon.brand.service.BrandService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

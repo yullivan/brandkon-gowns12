@@ -1,8 +1,6 @@
-package brandkon.product;
+package brandkon.product.dto;
 
-import brandkon.brand.BrandDetailResponse;
-
-import java.util.List;
+import brandkon.brand.dto.BrandDetailResponse;
 
 public record ProductDetailResponse(
         Long id,
