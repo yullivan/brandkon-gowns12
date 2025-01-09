@@ -19,7 +19,7 @@ public class BrandController {
     }
 
     @GetMapping("/{brandId}")
-    public BrandResponse readBrandByCategory(@PathVariable Long brandId){
+    public BrandResponse readBrandByBrandId(@PathVariable Long brandId){
         return brandService.read(brandId);
     }
 }
