@@ -5,16 +5,17 @@ import brandkon.brand.entity.Brand;
 import brandkon.brand.repository.BrandCategoryRepository;
 import brandkon.brand.repository.BrandRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class BrandService {
 
-    BrandRepository brandRepository;
-    BrandCategoryRepository brandCategoryRepository;
+    private final BrandRepository brandRepository;
+    private final BrandCategoryRepository brandCategoryRepository;
 
     public List<BrandResponse> readByCategory(String slug) {
         return brandRepository.findByCategory_Slug(slug).stream()

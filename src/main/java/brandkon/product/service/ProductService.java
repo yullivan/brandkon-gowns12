@@ -10,16 +10,17 @@ import brandkon.product.dto.ProductResponse;
 import brandkon.product.entity.Product;
 import brandkon.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductService {
-    ProductRepository productRepository;
-    BrandRepository brandRepository;
-    ProductDao productDao;
+    private final ProductRepository productRepository;
+    private final BrandRepository brandRepository;
+    private final ProductDao productDao;
 
     public List<ProductResponse> read(Long brandId) {
         if (brandId!=null){

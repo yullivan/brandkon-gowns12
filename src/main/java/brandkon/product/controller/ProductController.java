@@ -5,16 +5,17 @@ import brandkon.product.dto.ProductResponse;
 import brandkon.product.service.ProductService;
 import brandkon.product.dto.ProductDetailResponse;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 
-    ProductService productService;
+    private final ProductService productService;
 
     @GetMapping("")
     public List<ProductResponse> readProducts(@RequestParam(required = false) Long brandId) {
