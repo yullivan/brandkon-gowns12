@@ -11,7 +11,4 @@ import java.util.List;
 
 @Repository
 public interface BrandRepository extends JpaRepository<Brand,Long> {
-
-//    @Query("SELECT b FROM Brand b JOIN b.categories bc JOIN Category c ON c.id = bc.categoryId WHERE c.slug = :slug")
-//    List<Brand> findByCategory_Slug(@Param("slug") String slug);
 }

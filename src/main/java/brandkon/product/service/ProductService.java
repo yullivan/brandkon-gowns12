@@ -19,7 +19,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
-    private final BrandRepository brandRepository;
     private final ProductDao productDao;
 
     public List<ProductResponse> read(Long brandId) {
@@ -48,7 +47,7 @@ public class ProductService {
 
     public ProductDetailResponse readDetails(Long productId) {
         Product p = productRepository.findById(productId).orElseThrow(()->new IllegalArgumentException("존재하지 않는 상품 ID 입니다"));
-        Brand b = brandRepository.findById(p.getBrand().getId()).orElseThrow();
+        Brand b = p.getBrand();
         return new ProductDetailResponse(
                 p.getId(),
                 p.getName(),

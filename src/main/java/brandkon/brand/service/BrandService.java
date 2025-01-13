@@ -20,16 +20,6 @@ public class BrandService {
     private final BrandCategoryRepository brandCategoryRepository;
     private final CategoryRepository categoryRepository;
 
-//    public List<BrandResponse> readByCategory(String slug) {
-//        return brandRepository.findByCategory_Slug(slug).stream()
-//                .map(o->new BrandResponse(
-//                        o.getId(),
-//                        o.getName(),
-//                        o.getImageUrl()
-//                ))
-//                .toList();
-//    }
-
     public List<BrandResponse> readByCategory(String slug) {
         Long categoryId = categoryRepository.findBySlug(slug).getId();
         List<BrandCategory> bc = brandCategoryRepository.findAllByCategoryId(categoryId);
