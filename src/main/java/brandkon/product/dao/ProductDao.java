@@ -45,7 +45,7 @@ public class ProductDao {
     }
 
     private BooleanExpression categoryIdEq(Long categoryId) {
-        return categoryId != null ? qBrandCategory.CategoryId.eq(categoryId) : null;
+        return categoryId != null ? qBrandCategory.categoryId.eq(categoryId) : null;
     }
 
     private BooleanExpression brandIdEq(Long brandId){
