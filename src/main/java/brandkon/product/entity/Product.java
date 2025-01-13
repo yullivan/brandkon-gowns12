@@ -2,14 +2,14 @@ package brandkon.product.entity;
 
 import brandkon.brand.entity.Brand;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@ToString
+@EqualsAndHashCode
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
