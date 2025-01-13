@@ -18,7 +18,7 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @GetMapping("")
+    @GetMapping
     public List<CategoryResponse> readCategories(){
        return categoryService.readAll();
     }

@@ -14,7 +14,7 @@ import java.util.List;
 public class BrandController {
     private final BrandService brandService;
 
-    @GetMapping("")
+    @GetMapping
     public List<BrandResponse> readBrandByCategory(@RequestParam("category") String slug){
         return brandService.readByCategory(slug);
     }

@@ -17,7 +17,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @GetMapping("")
+    @GetMapping
     public List<ProductResponse> readProducts(@RequestParam(required = false) Long brandId) {
         return productService.read(brandId);
     }
