@@ -17,5 +17,5 @@ public class BrandCategory {
     @ManyToOne
     @ToString.Exclude
     private Brand brand;
-    private Long CategoryId;
+    private Long categoryId;
 }
